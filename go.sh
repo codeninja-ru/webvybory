@@ -19,6 +19,6 @@ while [ true ]; do
 	NOW=`date -u "+%Y%m%d_%H%M%S"`
 	FILE="video/uik$UIK-$CID-$NOW.mpg"
 	URL="http://$HOST/variant.m3u8?cid=$CID&var=orig" 
-	ffmpeg -i "http://188.254.120.2/variant.m3u8?cid=aeb33632-459e-11e1-8a16-001999c6e3f2&var=orig" -f mpegts -vcodec copy -acodec copy $FILE
+	ffmpeg -i $URL -f mpegts -vcodec copy -acodec copy $FILE
 done
 
