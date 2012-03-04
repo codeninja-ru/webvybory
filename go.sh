@@ -1,7 +1,8 @@
 #/bin/sh
 
-if [[ "$#" != "2" ]] ; then
-	echo "usage ./go cid uik"
+if [[ !( ("$#" == "2") || ("$#" == "3") ) ]] ; then
+	echo "$#"
+	echo "usage ./go cid uik [host]"
 	echo "cid - айдишник видео"
 	echo "uik - номер уик, чтобы не проебать"
 	exit 0
@@ -9,6 +10,10 @@ fi
 
 # подставьте свой хост, чтобы не грузить всем один сервак
 HOST="188-254-120-4.webvybory2012.ru"
+
+if [[ "$3" != "" ]]; then
+	HOST="$3"
+fi
 
 CID="$1"
 UIK="$2"
